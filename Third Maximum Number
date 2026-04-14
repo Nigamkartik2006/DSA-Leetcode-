@@ -1,0 +1,37 @@
+Given an integer array nums, return the third distinct maximum number in this array. If the third maximum does not exist, return the maximum number.
+
+Solution
+
+ class Solution {
+    public int thirdMax(int[] nums) {
+
+        Integer largest = null;
+        Integer slargest = null;
+        Integer tlargest = null;
+
+        for (int num : nums) {
+
+            // FIX: null check before comparison
+            if ((largest != null && num == largest) ||
+                (slargest != null && num == slargest) ||
+                (tlargest != null && num == tlargest)) {
+                continue;
+            }
+
+            if (largest == null || num > largest) {
+                tlargest = slargest;
+                slargest = largest;
+                largest = num;
+            } 
+            else if (slargest == null || num > slargest) {
+                tlargest = slargest;
+                slargest = num;
+            } 
+            else if (tlargest == null || num > tlargest) {
+                tlargest = num;
+            }
+        }
+
+        return (tlargest == null) ? largest : tlargest;
+    }
+}
