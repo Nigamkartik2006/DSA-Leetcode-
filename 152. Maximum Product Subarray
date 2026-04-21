@@ -1,0 +1,26 @@
+ Given an integer array nums, find a subarray that has the largest product, and return the product.
+
+The test cases are generated so that the answer will fit in a 32-bit integer.
+
+Note that the product of an array with a single element is the value of that element.
+
+Solution==
+
+
+class Solution {
+    public int maxProduct(int[] nums) {
+        int n = nums.length;
+        int maxi = Integer.MIN_VALUE;  
+
+        for (int i = 0; i < n; i++) {
+            int prod = 1;
+            for (int j = i; j < n; j++) {
+                prod *= nums[j];
+                maxi = Math.max(maxi, prod);  
+            }
+        }
+        return maxi;
+    }
+}
+
+
