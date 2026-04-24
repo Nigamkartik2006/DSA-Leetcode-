@@ -1,0 +1,24 @@
+You are given an array nums, where each number in the array appears either once or twice.
+
+Return the bitwise XOR of all the numbers that appear twice in the array, or 0 if no number appears twice.
+
+Solution
+
+ import java.util.HashSet;
+
+class Solution {
+    public int duplicateNumbersXOR(int[] nums) {
+        int xor = 0;
+        HashSet<Integer> set = new HashSet<>();
+
+        for (int num : nums) {
+            if (set.contains(num)) {
+                xor ^= num; // duplicate mila
+            } else {
+                set.add(num);
+            }
+        }
+
+        return xor;
+    }
+}
