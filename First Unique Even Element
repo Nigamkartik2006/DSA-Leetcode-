@@ -1,0 +1,28 @@
+You are given an integer array nums.
+
+Return an integer denoting the first even integer (earliest by array index) that appears exactly once in nums. If no such integer exists, return -1.
+
+An integer x is considered even if it is divisible by 2.
+
+
+
+Solution
+
+class Solution {
+    public int firstUniqueEven(int[] nums) {
+        int n= nums.length;
+        for(int i=0;i<n;i++){
+            if(nums[i]%2==0){
+               int  count=0;
+               for(int j=0;j<n;j++){
+                if(nums[i]==nums[j]){
+                    count++;
+                }
+               }
+               if(count==1){
+                return nums[i];               }
+            }
+        }
+        return -1;
+    }
+}
