@@ -1,0 +1,58 @@
+Given an array of integers nums sorted in non-decreasing order, find the starting and ending position of a given target value.
+
+If target is not found in the array, return [-1, -1].
+
+You must write an algorithm with O(log n) runtime complexity.
+
+Solution==
+
+
+class Solution {
+
+    public int lowerBound(int[] nums, int target) {
+        int ans = nums.length;
+        int low = 0, high = nums.length - 1;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+
+            if (nums[mid] >= target) {
+                ans = mid;
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return ans;
+    }
+
+    public int upperBound(int[] nums, int target) {
+        int ans = nums.length;
+        int low = 0, high = nums.length - 1;
+
+        while (low <= high) {
+            int mid = low + (high - low) / 2;
+
+            if (nums[mid] > target) {
+                ans = mid;
+                high = mid - 1;
+            } else {
+                low = mid + 1;
+            }
+        }
+        return ans;
+    }
+
+    public int[] searchRange(int[] nums, int target) {
+
+        int lb = lowerBound(nums, target);
+
+        if (lb == nums.length || nums[lb] != target) {
+            return new int[]{-1, -1};
+        }
+
+        int ub = upperBound(nums, target);
+
+        return new int[]{lb, ub - 1};
+    }
+}
