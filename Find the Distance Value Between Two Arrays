@@ -1,0 +1,35 @@
+Given two integer arrays arr1 and arr2, and the integer d, return the distance value between the two arrays.
+
+The distance value is defined as the number of elements arr1[i] such that there is not any element arr2[j] where |arr1[i]-arr2[j]| <= d.
+
+
+
+Solution
+
+ class Solution {
+    public int findTheDistanceValue(int[] arr1, int[] arr2, int d) {
+
+        int n = arr1.length;
+        int m = arr2.length;
+
+        int count = 0;
+
+        for(int i = 0; i < n; i++) {
+
+            int j;
+
+            for(j = 0; j < m; j++) {
+
+                if(Math.abs(arr1[i] - arr2[j]) <= d) {
+                    break;
+                }
+            }
+
+            if(j == m) {
+                count++;
+            }
+        }
+
+        return count;
+    }
+}
