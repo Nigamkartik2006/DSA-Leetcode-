@@ -1,0 +1,21 @@
+You are given an integer array nums with the following properties:
+
+nums.length == 2 * n.
+nums contains n + 1 unique values, n of which occur exactly once in the array.
+Exactly one element of nums is repeated n times.
+Return the element that is repeated n times.
+
+Solution
+
+class Solution {
+    public int repeatedNTimes(int[] nums) {
+        ArrayList<Integer> list= new ArrayList<>();
+        for(int num:nums){
+            if(list.contains(num)){
+                return num;
+            }
+            list.add(num);
+        }
+        return -1;
+    }
+}
