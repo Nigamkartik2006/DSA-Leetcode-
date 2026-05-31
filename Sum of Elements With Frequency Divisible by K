@@ -1,0 +1,40 @@
+You are given an integer array nums and an integer k.
+
+Return an integer denoting the sum of all elements in nums whose frequency is divisible by k, or 0 if there are no such elements.
+
+Note: An element is included in the sum exactly as many times as it appears in the array if its total frequency is divisible by k.
+
+ You are given an integer array nums and an integer k.
+
+Return an integer denoting the sum of all elements in nums whose frequency is divisible by k, or 0 if there are no such elements.
+
+Note: An element is included in the sum exactly as many times as it appears in the array if its total frequency is divisible by k.
+
+
+
+
+Solution
+
+class Solution {
+    public int sumDivisibleByK(int[] nums, int k) {
+        int n= nums.length;
+        int sum=0;
+         
+        for(int i=0;i<n;i++){
+            int count=0;
+            for(int j=0;j<n;j++){
+
+            
+             
+            if(nums[i]==nums[j]){
+                count++;
+            }
+            }
+            if(count%k==0){
+                sum+=nums[i];
+            }
+
+        }
+        return sum;
+    }
+}
