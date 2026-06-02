@@ -1,0 +1,41 @@
+You are given an integer array nums.
+
+Return true if the frequency of any element of the array is prime, otherwise, return false.
+
+The frequency of an element x is the number of times it occurs in the array.
+
+A prime number is a natural number greater than 1 with only two factors, 1 and itself.
+
+
+Solution
+
+
+class Solution {
+    public boolean checkPrimeFrequency(int[] nums) {
+        int n= nums.length;
+        for(int i=0;i<n;i++){
+            int count=0;
+            for(int j=0;j<n;j++){
+                if(nums[i]==nums[j]){
+                    count++;
+                }
+            }
+             boolean prime=true;
+             if(count<=1){
+                prime= false;
+             }
+
+             for(  int k=2;k*k<=count;k++){
+                if(count% k==0){
+                    prime=false;
+                    break;
+                }
+             }
+             if(prime){
+                return true;
+             }
+
+        }
+        return false;
+    }
+}
