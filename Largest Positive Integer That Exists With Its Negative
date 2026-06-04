@@ -1,0 +1,27 @@
+Given an integer array nums that does not contain any zeros, find the largest positive integer k such that -k also exists in the array.
+
+Return the positive integer k. If there is no such integer, return -1.Given an integer array nums that does not contain any zeros, find the largest positive integer k such that -k also exists in the array.
+
+Return the positive integer k. If there is no such integer, return -1.
+
+
+Solution
+
+
+class Solution {
+    public int findMaxK(int[] nums) {
+        int k = -1;
+
+        for(int i = 0; i < nums.length; i++) {
+            for(int j = 0; j < nums.length; j++) {
+                if(nums[i] > 0 && nums[j] == -nums[i]) {
+                    if(nums[i] > k) {
+                        k = nums[i];
+                    }
+                }
+            }
+        }
+
+        return k;
+    }
+}
