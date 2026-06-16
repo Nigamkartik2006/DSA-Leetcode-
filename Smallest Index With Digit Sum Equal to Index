@@ -1,0 +1,31 @@
+You are given an integer array nums.
+
+Return the smallest index i such that the sum of the digits of nums[i] is equal to i.
+
+If no such index exists, return -1.
+
+
+Solution
+
+class Solution {
+    public int smallestIndex(int[] nums) {
+        int n = nums.length;
+
+        for (int i = 0; i < n; i++) {
+            int num = nums[i];   
+            int sum = 0;
+
+            while (num > 0) {
+                int digit = num % 10;
+                num /= 10;       
+                sum += digit;    
+            }
+
+            if (i == sum) {
+                return i;
+            }
+        }
+
+        return -1;
+    }
+}
