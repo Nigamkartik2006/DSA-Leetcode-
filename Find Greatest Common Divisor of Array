@@ -1,0 +1,15 @@
+Find Greatest Common Divisor of Array
+
+
+
+
+Solution
+
+
+
+import math
+
+class Solution(object):
+    def findGCD(self, nums):
+        nums.sort()
+        return math.gcd(nums[0], nums[-1])
