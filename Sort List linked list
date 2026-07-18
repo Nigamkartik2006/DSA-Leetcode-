@@ -1,0 +1,25 @@
+Given the head of a linked list, return the list after sorting it in ascending orderGiven the head of a linked list, return the list after sorting it in ascending order
+
+solution
+
+class Solution {
+    public ListNode sortList(ListNode head) {
+        if(head==null || head.next==null){
+            return head;
+        }
+        ArrayList<Integer>list=new ArrayList<>();
+        ListNode temp=head;
+        while(temp!=null){
+            list.add(temp.val);
+            temp=temp.next;
+        }
+        temp=head;
+        Collections.sort(list);
+        for(int i=0;i<list.size();i++){
+          temp.val=list.get(i);
+          temp=temp.next;
+        }
+         
+        return head;
+    }
+}
