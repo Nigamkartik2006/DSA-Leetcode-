@@ -1,0 +1,29 @@
+Given the heads of two singly linked-lists headA and headB, return the node at which the two lists intersect. If the two linked lists have no intersection at all, return null.
+
+For example, the following two linked lists begin to intersect at node c1:
+
+
+
+Solution'
+
+
+public class Solution {
+    public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+        HashMap<ListNode,Integer>map=new HashMap<>();
+       ListNode temp=headA;
+        
+       while(temp!=null){
+        map.put(temp,1);
+        temp=temp.next;
+       }
+       temp=headB;
+       while(temp!=null){
+        if(map.containsKey(temp)){
+            return temp;
+        }
+        temp=temp.next;
+       }
+       return null;
+
+    }
+}
