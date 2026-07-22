@@ -1,0 +1,30 @@
+class Solution {
+    public ListNode rotateRight(ListNode head, int k) {
+
+        if (head == null || head.next == null)
+            return head;
+
+        while (k != 0) {
+
+            ListNode temp = head;
+            ListNode prev = null;
+
+            // Tail aur previous find karo
+            while (temp.next != null) {
+                prev = temp;
+                temp = temp.next;
+            }
+
+            ListNode tail = temp;
+
+            // Tail ko aage lao
+            prev.next = null;
+            tail.next = head;
+            head = tail;
+
+            k--;
+        }
+
+        return head;
+    }
+}
