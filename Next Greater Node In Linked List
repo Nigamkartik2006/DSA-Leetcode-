@@ -1,0 +1,49 @@
+You are given the head of a linked list with n nodes.
+
+For each node in the list, find the value of the next greater node. That is, for each node, find the value of the first node that is next to it and has a strictly larger value than it.
+
+Return an integer array answer where answer[i] is the value of the next greater node of the ith node (1-indexed). If the ith node does not have a next greater node, set answer[i] = 0.
+
+
+SOlution
+
+ class Solution {
+    public int[] nextLargerNodes(ListNode head) {
+
+        ArrayList<Integer> list = new ArrayList<>();
+
+        ListNode temp = head;
+        ListNode next = null;
+
+        while (temp != null) {
+
+            next = temp.next;
+            boolean found = false;
+
+            while (next != null) {
+
+                if (next.val > temp.val) {
+                    list.add(next.val);
+                    found = true;
+                    break;
+                }
+
+                next = next.next;
+            }
+
+            if (!found) {
+                list.add(0);
+            }
+
+            temp = temp.next;
+        }
+
+        int[] arr = new int[list.size()];
+
+        for (int i = 0; i < list.size(); i++) {
+            arr[i] = list.get(i);
+        }
+
+        return arr;
+    }
+}
