@@ -13,19 +13,10 @@ The goal of this repository is to improve my problem-solving skills, strengthen 
 - ✅ Binary Search
 - ✅ Sorting
 - ✅ Hashing
-- ✅ Two Pointers
-- ✅ Sliding Window
 - ✅ Linked List
 - ✅ Stack
 - ✅ Queue
-- ✅ Trees
-- ✅ Binary Search Trees (BST)
-- ✅ Heaps / Priority Queue
-- ✅ Graphs
-- ✅ Greedy Algorithms
 - ✅ Recursion & Backtracking
-- ✅ Dynamic Programming
-- ✅ Bit Manipulation
 - ✅ Tries
 - ✅ Math
 
