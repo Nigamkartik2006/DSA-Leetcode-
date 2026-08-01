@@ -17,7 +17,6 @@ The goal of this repository is to improve my problem-solving skills, strengthen 
 - ✅ Stack
 - ✅ Queue
 - ✅ Recursion & Backtracking
-- ✅ Tries
 - ✅ Math
 
 ---
