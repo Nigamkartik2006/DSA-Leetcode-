@@ -1,0 +1,36 @@
+Given a 0-indexed string word and a character ch, reverse the segment of word that starts at index 0 and ends at the index of the first occurrence of ch (inclusive). If the character ch does not exist in word, do nothing.
+
+For example, if word = "abcdefd" and ch = "d", then you should reverse the segment that starts at 0 and ends at 3 (inclusive). The resulting string will be "dcbaefd".
+Return the resulting string.
+
+
+Solutiob
+
+ import java.util.Stack;
+
+class Solution {
+    public String reversePrefix(String word, char ch) {
+
+        Stack<Character> st = new Stack<>();
+        char[] arr = word.toCharArray();
+
+        int i = 0;
+
+        while (i < arr.length && arr[i] != ch) {
+            st.push(arr[i]);
+            i++;
+        }
+
+        if (i == arr.length)
+            return word;
+
+        st.push(arr[i]);
+
+        int j = 0;
+        while (!st.isEmpty()) {
+            arr[j++] = st.pop();
+        }
+
+        return new String(arr);
+    }
+}
