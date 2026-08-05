@@ -1,6 +1,6 @@
 # 🚀 DSA Questions Repository
 
-This repository contains my solutions to **Data Structures and Algorithms (DSA)** problems from platforms like **LeetCode**, **CodeStudio**, **GeeksforGeeks**, and more.
+This repository contains my solutions to **Data Structures and Algorithms (DSA)** problems from platforms like **LeetCode**, **CodeStudio**, **GeeksforGeeks**, and more
 
 The goal of this repository is to improve my problem-solving skills, strengthen my understanding of algorithms, and prepare for coding interviews and placements.
 
