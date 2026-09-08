@@ -1,0 +1,28 @@
+You are given a sorted integer array nums and an integer k.
+
+Return an array such that each distinct element appears at most k times, while preserving the relative order of the elements in nums.
+
+Note: If a distinct element appears at least k times, then it must appear exactly k times in the resulting array.
+
+
+
+
+Solution
+
+
+class Solution {
+    public int[] limitOccurrences(int[] nums, int k) {
+        int n= nums.length;
+        HashMap<Integer,Integer> map= new HashMap<>();
+        int j=0;
+        for(int i=0;i<n;i++){
+            int count=map.getOrDefault(nums[i],0);
+            if(count<k){
+                nums[j]=nums[i];
+                j++;
+                map.put(nums[i],count+1);
+            }
+        }
+        return Arrays.copyOf(nums,j);
+    }
+}
