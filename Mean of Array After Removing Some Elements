@@ -1,0 +1,23 @@
+Given an integer array arr, return the mean of the remaining integers after removing the smallest 5% and the largest 5% of the elements.
+
+Answers within 10-5 of the actual answer will be considered accepted.
+
+
+
+
+Solution
+
+
+class Solution {
+    public double trimMean(int[] arr) {
+        int n = arr.length;
+        Arrays.sort(arr);
+        int p=(5*n)/100;
+        int sum=0;
+        for(int i=p;i<n-p;i++){
+           sum+=arr[i];
+        }
+        double mean= (double)sum/(n-2*p);
+        return mean;
+    }
+}
