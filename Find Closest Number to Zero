@@ -1,0 +1,31 @@
+Given an integer array nums of size n, return the number with the value closest to 0 in nums. If there are multiple answers, return the number with the largest value.
+
+
+
+Solution
+
+class Solution {
+    public int findClosestNumber(int[] nums) {
+        int n = nums.length;
+        ArrayList <Integer> list= new ArrayList<>();
+        for(int i=0;i<n;i++){
+            if(nums[i]<0){
+                list.add(0-nums[i]);
+            }
+            else{
+                list.add(nums[i]-0);
+            }
+        }
+        Collections.sort(list);
+      
+        int min = list.get(0);
+
+        for (int i = 0; i < n; i++) {
+            if (nums[i] == min) {
+                return nums[i];
+            }
+        }
+
+        return -min;
+    }
+}
