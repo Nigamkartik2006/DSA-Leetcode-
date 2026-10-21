@@ -1,0 +1,39 @@
+You are given an integer array nums and an integer k.
+
+Find the absolute difference between:
+
+the sum of the k largest elements in the array; and
+the sum of the k smallest elements in the array.
+Return an integer denoting this difference.
+
+
+Solution
+
+
+class Solution {
+    public int absDifference(int[] nums, int k) {
+        int n= nums.length;
+        Arrays.sort(nums);
+        int countl=0;
+        int counts=0;
+        int suml=0;
+        int sums=0;
+        //sum of largest k value
+        for(int i=n-1;i>=0;i--){
+          suml+=nums[i];
+          countl++;
+          if(countl==k){
+            break;
+          }
+            
+        }
+        for(int i=0;i<n;i++){
+            sums+=nums[i];
+            counts++;
+            if(counts==k){
+                break;
+            }
+        }
+        return Math.abs(suml-sums);
+    }
+}
