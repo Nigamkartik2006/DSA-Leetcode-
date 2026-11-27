@@ -1,0 +1,20 @@
+Given an integer n, return the number of trailing zeroes in n!.
+
+Note that n! = n * (n - 1) * (n - 2) * ... * 3 * 2 * 1.
+
+Solution
+
+
+class Solution {
+    public int trailingZeroes(int n) {
+        int fact=0;
+        for(int i=1;i<=n;i++){
+            int temp=i;
+            while(temp%5==0){
+                fact++;
+                temp=temp/5;
+            }
+        }
+        return fact;
+    }
+}
